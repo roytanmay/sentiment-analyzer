@@ -3,6 +3,9 @@ import pandas as pd
 import os
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 CORS(app, origins='*')
@@ -36,4 +39,5 @@ def predict():
     return jsonify({"sentiment": sentiment, "prediction": int(prediction[0])})
 
 if __name__ == '__main__':
-    app.run(debug=True, port=8080)
+    port = int(os.getenv('PORT', 8080))
+    app.run(port=port, host='0.0.0.0')

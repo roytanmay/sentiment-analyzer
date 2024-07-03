@@ -5,6 +5,7 @@ joblib
 jupyter
 flask
 flask-cors
+gunicorn
 matplotlib
 nltk
 numpy

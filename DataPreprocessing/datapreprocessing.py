@@ -14,7 +14,7 @@ for word in negations_and_sentiment_words:
         stop_words.remove(word)
 
 stop_words = set(stop_words)
-print(stop_words)
+# print(stop_words)
 
 
 #Removing special character

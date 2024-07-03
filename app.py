@@ -15,13 +15,16 @@ classifier = joblib.load(model_path + r'/classifier.pkl')
 
 def getPrediction(review):
     prediction = classifier.predict(review)
+    predict_prob = classifier.predict_proba(review)
 
     if prediction[0] == 1:
         sentiment = "Positive"
+        probability = predict_prob[0][1]
     else:
         sentiment = "Negative"
+        probability = predict_prob[0][0]
 
-    return prediction, sentiment
+    return probability, prediction, sentiment
 
 
 @app.route("/")
@@ -34,10 +37,11 @@ def predict():
     review = data.get("review", "")
 
     review = pd.Series([review])
-    prediction, sentiment = getPrediction(review)
+    probability, prediction, sentiment = getPrediction(review)
     
-    return jsonify({"sentiment": sentiment, "prediction": int(prediction[0])})
+    return jsonify({"sentiment": sentiment, "prediction": int(prediction[0]), "probability": float(probability)})
 
 if __name__ == '__main__':
     port = int(os.getenv('PORT', 8080))
+    # app.run(debug=True, port=port)
     app.run(port=port, host='0.0.0.0')

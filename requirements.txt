@@ -1,6 +1,5 @@
 beautifulsoup4
 cloudpickle
-dotenv
 ipykernel
 joblib
 jupyter
@@ -14,6 +13,7 @@ numpydoc
 pandas
 plotly
 prettytable
+python-dotenv
 scikit-learn
 seaborn
 shap

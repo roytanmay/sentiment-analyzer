@@ -1,5 +1,5 @@
 .container {
-  background-image: url("/bg.jpg");
+  background-image: url("/bg2.png");
   background-size: cover;
   display: flex;
   flex-direction: column;
@@ -13,7 +13,8 @@
   font-family: "Playwrite GB S", cursive;
   font-size: 70px;
   font-weight: 700;
-  color: #12372a;
+  /* color: #12372a; */
+  color: #95d2b3;
   text-shadow: 5px 5px 10px rgb(0, 0, 0, 0.4);
   margin: 50px 10px 0 10px;
   line-height: 80%;
@@ -24,7 +25,8 @@
   font-size: 35px;
   font-weight: 700;
   margin: 30px 10px;
-  color: #2c3333;
+  /* color: #2c3333; */
+  color: #d8efd3;
   text-shadow: 3px 3px 6px rgb(0, 0, 0, 0.4);
 }
 
@@ -79,7 +81,8 @@
   font-weight: 700;
   margin: 50px 0 0px 0;
   line-height: 100%;
-  color: #2c3333;
+  /* color: #2c3333; */
+  color: #d8efd3;
   text-shadow: 3px 3px 6px rgb(0, 0, 0, 0.4);
 }
 
@@ -87,7 +90,8 @@
   font-family: "Playwrite DE Grund", cursive;
   font-size: 15px;
   font-weight: 400;
-  color: #2c3333;
+  /* color: #2c3333; */
+  color: #d8efd3;
   text-align: center;
   max-width: 800px;
 }

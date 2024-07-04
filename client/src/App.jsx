@@ -85,10 +85,16 @@ const App = () => {
 
       <Modal open={openModal} onClose={() => setOpenModal(false)}>
         <div className={styles.modal}>
-          <img
+          {/* <img
             src={prediction === 1 ? "/positive.png" : "/negative.png"}
             className={styles.emoji}
-          />
+          /> */}
+
+          {prediction === 1 ? (
+            <img src="/positive.png" alt="image" className={styles.emoji} />
+          ) : (
+            <img src="/negative.png" alt="image" className={styles.emoji} />
+          )}
           <p className={styles.tagline}>
             {prediction === 1
               ? "Your review radiates positivity."

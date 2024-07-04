@@ -25,7 +25,7 @@ const App = () => {
       setSentiment(data.sentiment);
       setPrediction(data.prediction);
       setProbability(data.probability);
-      console.log(prediction);
+
       setOpenModal(true);
     } catch (error) {
       console.error("Error checking sentiment!!! Try Again Later...");
@@ -52,13 +52,20 @@ const App = () => {
             value={review}
             onChange={(e) => setReview(e.target.value)}
           />
-          <button type="submit" className={styles.btn}>
-            {loading ? (
-              <BeatLoader size={20} color="#ffffff" />
-            ) : (
-              "Check Sentiment"
-            )}
-          </button>
+
+          <div className={styles.btnDiv}>
+            <p className={styles.para} style={{ color: "#EE4E4E" }}>
+              It may take some time while the model makes the prediction
+            </p>
+
+            <button type="submit" className={styles.btn}>
+              {loading ? (
+                <BeatLoader size={20} color="#ffffff" />
+              ) : (
+                "Check Sentiment"
+              )}
+            </button>
+          </div>
         </form>
 
         <h3 className={styles.disclaimer}>: Disclaimer :</h3>

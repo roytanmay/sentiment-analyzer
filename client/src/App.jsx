@@ -6,25 +6,31 @@ import BeatLoader from "react-spinners/BeatLoader";
 
 const App = () => {
   const [review, setReview] = useState("");
-  const [sentiment, setSentiment] = useState("");
+  // const [sentiment, setSentiment] = useState("");
   const [prediction, setPrediction] = useState(0);
-  const [probability, setProbability] = useState("");
+  // const [probability, setProbability] = useState("");
   const [openModal, setOpenModal] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!review.trim()) {
+      alert("Enter a review");
+      return;
+    }
+
     setLoading(true);
 
-    e.preventDefault();
     try {
       const response = await axios.post(`${BACKEND_URL}/predict`, { review });
       // console.log(response.data);
       const data = response.data;
-      setSentiment(data.sentiment);
+      // setSentiment(data.sentiment);
       setPrediction(data.prediction);
-      setProbability(data.probability);
+      // setProbability(data.probability);
 
       setOpenModal(true);
     } catch (error) {

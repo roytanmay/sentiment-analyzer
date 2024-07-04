@@ -95,7 +95,7 @@ const App = () => {
           ) : (
             <img src="/negative.png" alt="image" className={styles.emoji} />
           )}
-          <p className={styles.tagline}>
+          <p className={styles.tagline} style={{ color: "#2c3333" }}>
             {prediction === 1
               ? "Your review radiates positivity."
               : "Your review seems to be on the darker side."}
